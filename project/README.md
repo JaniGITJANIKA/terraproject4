@@ -68,7 +68,20 @@ Első alkalommal a GitHubon:
 3. Nyisd meg az **Actions** fület, és ellenőrizd, hogy a `Deploy to GitHub Pages` futás sikeres-e.
 4. A publikált oldal címe: [https://janigitjanika.github.io/terraproject4/](https://janigitjanika.github.io/terraproject4/).
 
-Később elég a változtatásokat a `master` ágra feltölteni; a GitHub Actions újraépíti és frissíti az oldalt. A `dist` mappát nem kell feltölteni a Gitbe, mert a GitHub minden telepítéskor újra elkészíti.
+Később töltsd fel a forráskód módosításait és az új `dist` buildet is a `master` ágra. A `dist` feltöltése frissíti a repositoryban lévő kész weboldalt; a GitHub Actions ettől függetlenül minden módosítás után újraépíti és telepíti az oldalt.
+
+Új build készítése és feltöltése:
+
+```bash
+npm run build
+cd ..
+git add index.html project/.gitignore project/README.md
+git add -f project/dist
+git commit -m "Update website build"
+git push origin master
+```
+
+Az `index.html` itt a repository gyökérmappájának indítóoldala; a webalkalmazás kész változata a `project/dist` könyvtárban van.
 
 ## Hasznos parancsok
 
@@ -90,9 +103,8 @@ project/
 │   ├── App.css             # Az effektek stílusai
 │   ├── index.css           # Alapstílusok
 │   └── main.jsx            # React belépési pont
-├── dist/                   # A build kimenete (automatikusan generálódik)
+├── dist/                   # A build kimenete (feltöltve a GitHubra)
 ├── index.html              # HTML belépési pont
 ├── package.json            # Parancsok és függőségek
 └── vite.config.js          # Vite és relatív útvonalak beállításai
 ```
-
