@@ -1,0 +1,573 @@
+@keyframes pageopen {
+  0% {
+    opacity: 0.8;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+body {
+  background-color: darkblue;
+}
+.contener {
+  position: relative;
+  width: 100%;
+  max-width: 1240px;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: black;
+}
+h1 {
+  display: inline-block;
+  color: white;
+  padding: 20px;
+  border-radius: 20px;
+  background: linear-gradient(45deg, blue,purple);
+  transition: all 1s;
+}
+@keyframes h1animation {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(5deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-5deg);
+  }
+}
+h1:hover {
+  transform: scale(1.1);
+  animation: h1animation 0.5s;
+}
+.nav {
+  display: inline-block;
+  background-color: blue;
+  padding: 10px;
+  font-size: xx-large;
+  line-height: 1.5;
+  font-weight: bold;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  animation: pageopen 0.5s ease-in-out;
+}
+.nav li {
+  list-style: none;
+  transition: all 0.1s;
+}
+.nav li:hover {
+  transform: scale(1.1);
+}
+.nav .li {
+  margin: 5px;
+  background-color: blue;
+  padding: 5px;
+  border-radius: 20px;
+  transition: all 0.1s;
+  color: white;
+  text-decoration: none;
+}
+.nav .li:hover {
+  background-color: purple;
+  transform: scale(1.1);
+}
+h2 {
+  color: white;
+  font-size: x-large;
+  margin-top: 10px;
+  padding: 10px;
+  background-color: purple;
+  border-radius: 20px 20px 0 0;
+  font-weight: bold;
+  font-size: 2em;
+
+}
+.effekter {
+  margin-bottom: 10px;
+  background-color: blue;
+  border-radius: 0 0 20px 20px;
+  animation: pageopen 0.5s ease-in-out;
+}
+td {
+  padding: 20px 0;
+  background-color: purple;
+  border-radius: 20px;
+  margin: 20px;
+  transition: all 0.3s;
+  color: transparent;
+  font-size: large;
+  text-align: center;
+}
+td:hover {
+  background-color: violet;
+  transform: scale(1.1);
+  color: white;
+  font-size: 100px;
+}
+table {
+  width: 100%;
+  border-spacing: separate;
+  border-spacing: 15px;
+}
+.main {
+  background-color: purple;
+  margin: 20px;
+  border-radius: 20px;
+  padding: 10px;
+  border: blue 3px solid;
+  font-size: larger;
+  animation: pageopen 0.5s ease-in-out;
+}
+
+@keyframes load {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(360deg);
+  }
+}
+
+
+.effekt2 {
+  position: relative;
+  width: 500px;
+  height: 500px;
+  background: linear-gradient(45deg, blue,purple);
+  border-radius: 50%;
+  margin: 0 auto;
+  animation: pageopen 0.5s ease-in-out;
+}
+.effekt2 div[class^="h"] {
+  position: absolute;
+  background-color: transparent;
+  height: 200px;
+  width: 40px;
+  border-radius: 20px;
+  left: 230px;
+  top: 50px;
+  transform-origin: bottom center;
+  transition: all 1s;
+  
+  --space: -30px;
+  transform: rotate(var(--rot)) translateY(var(--space));
+}
+.effekt2 .h1 {--rot: 0deg;}
+.effekt2 .h2 {--rot: 45deg;}
+.effekt2 .h3 {--rot: 90deg;}
+.effekt2 .h4 {--rot: 135deg;}
+.effekt2 .h5 {--rot: 180deg;}
+.effekt2 .h6 {--rot: 225deg;}
+.effekt2 .h7 {--rot: 270deg;}
+.effekt2 .h8 {--rot: 315deg;}
+
+@keyframes effekt2 {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(inherit);
+  }
+}
+
+.effekt2:hover {
+  animation: load 5s ease-in-out infinite;
+
+}
+
+@keyframes moving2 {
+  0%, 100% {
+    transform: rotate(var(--rot)) translateY(-30px);
+  }
+  50% {
+    transform: rotate(var(--rot)) translateY(-50px);
+  }
+}
+
+.effekt2:hover  div[class^="h"]{
+  background-color: white;
+  --space: -40px;
+  
+  animation: effekt2 1s ease-in-out, moving2 1s ease-in-out infinite;
+  animation-delay: 0s, 1s;
+}
+
+
+
+.a9 {
+  border-radius: 50%;
+  position: absolute;
+  top: 250px;
+  right: 250px;
+  transition: all 1s;
+  transform: translate(50%, -50%);
+  width: 0;
+  height: 0;
+}
+.effekt2:hover .a9 {
+  width: 60px;
+  height: 60px;
+  background-color: white;
+}
+.effekt3 {
+  background: linear-gradient(20deg,hsl(0, 0%, 30%) 20%,black,hsl(0, 0%, 30%) 80%);
+  padding: 50px;
+  animation: pageopen 0.5s ease-in-out;
+}
+.analogclock {
+  position: relative;
+  width: 500px;
+  height: 500px;
+  background-color: black;
+  border-radius: 50%;
+  margin: auto;
+  box-shadow: 0 0 20px white;
+}
+.analogclock div[class^="h"] {
+  position: absolute;
+  background-color: white;
+  height: 100px;
+  width: 40px;
+  border-radius: 20px;
+  left: 230px;
+  top: 150px;
+  transform-origin: bottom center;
+  transition: all 1s;
+  
+  --space: -180px;
+  transform: rotate(var(--rot)) translateY(var(--space));
+}
+.analogclock .a {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background-color: white;
+  border-radius: 50%;
+  top: 200px;
+  right: 200px;
+}
+.analogclock .our {
+  position: absolute;
+  background-color: blue;
+  height: 200px;
+  width: 40px;
+  border-radius: 20px;
+  left: 230px;
+  top: 50px;
+  transform-origin: bottom center;
+  transform: rotate(0deg);
+}
+.analogclock .minute {
+  position: absolute;
+  background-color: aqua;
+  height: 160px;
+  width: 40px;
+  border-radius: 20px;
+  left: 230px;
+  top: 90px;
+  transform-origin: bottom center;
+  transform: rotate(220deg);
+}
+.analogclock .second {
+  position: absolute;
+  background-color: lightgreen;
+  height: 150px;
+  width: 40px;
+  border-radius: 20px;
+  top: 100px;
+  right: 230px;
+  transform-origin: bottom center;
+  transform: rotate(140deg);
+}
+.analogclock .h12 {--rot: 0deg;}
+.analogclock .h1 {--rot: 30deg;}
+.analogclock .h2 {--rot: 60deg;}
+.analogclock .h3 {--rot: 90deg;}
+.analogclock .h4 {--rot: 120deg;}
+.analogclock .h5 {--rot: 150deg;}
+.analogclock .h6 {--rot: 180deg;}
+.analogclock .h7 {--rot: 210deg;}
+.analogclock .h8 {--rot: 240deg;}
+.analogclock .h9 {--rot: 270deg;}
+.analogclock .h10 {--rot: 300deg}
+.analogclock .h11 {--rot: 330deg}
+
+.digitalclock {
+  background-color: black;
+  width: 100%;
+  height: 100px;
+  color: white;
+  border-radius: 20px;
+  box-shadow: 0 0 20px white;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  font-size: 3em;
+}
+.digitalclock year {
+  margin: 20px
+}
+.digitalclocktext {
+  width: calc(100% - 40px);
+  margin: 0 auto;
+  height: 50px;
+  background-color: blue;
+  border-radius: 0 0 20px 20px;
+  font-size: 1.5em;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+@keyframes lufiballan {
+  0% {
+    background-color: transparent;
+  }
+  10%, 90% {
+    background-color: red;
+  }
+  100% {
+    background-color: transparent;
+    transform: scale(1.5);
+  }
+}
+
+@keyframes lufiballon {
+  0% {
+    background-color: transparent;
+  }
+  10%, 90% {
+    background-color: black;
+  }
+  100% {
+    background-color: transparent;
+  }
+}
+
+@keyframes lufibali {
+  0% {
+    top: 330px;
+  }
+  100% {
+    top: 0;
+  }
+}
+
+.effekt4 {
+  position: relative;
+  height: 500px;
+  width: 100%;
+  background: linear-gradient(blue 60%,purple);
+  display: flex;
+  justify-content: space-around;
+  justify-items: center;
+  margin: 0 auto;
+  animation: pageopen 0.5s ease-in-out;
+}
+.effekt4 .balli {
+  position: absolute;
+  display: flex;
+  animation: lufibali 5s;
+}
+.effekt4 .ballon {
+  margin: 10px;
+}
+.effekt4 .ballon .ball {
+  width: 50px;
+  height: 80px;
+  border-radius: 50%;
+  animation: lufiballan 5s;
+}
+.effekt4 .ballon .on {
+  width: 10px;
+  height: 50px;
+  margin: 0 auto;
+  border-radius: 0 0 5px 5px;
+  animation: lufiballon 5s;
+}
+.emoji {
+  position: relative;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: linear-gradient(45deg,yellow,orange);
+  margin: 20px auto;
+  animation: pageopen 0.5s ease-in-out;
+}
+.eyes1 {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-color: black;
+  border: 30px white solid;
+  border-radius: 50%;
+  top: 120px;
+  left: 140px;
+  transition: all 1s;
+  transform: translate(-50%, -50%);
+}
+.eyes1:hover {
+  border: 0px white solid;
+  transform-origin: center center;
+  width: 100px;
+  height: 100px;
+}
+.eyes2 {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-color: black;
+  border: 30px white solid;
+  border-radius: 50%;
+  top: 120px;
+  left: 360px;
+  transition: all 1s;
+  transform: translate(-50%, -50%);
+}
+.eyes2:hover {
+  border: 50px white solid;
+  width: 0;
+  height: 0;
+}
+.mouth {
+  position: absolute;
+  width: 200px;
+  height: 50px;
+  background-color: black;
+  top: 350px;
+  right: 150px;
+  border-radius: 0 0 50% 50%;
+  transition: all 1s;
+}
+.mouth:hover {
+  position: absolute;
+  height: 100px;
+}
+.like {
+  font-size: 300px;
+  margin: 0 auto;
+  transform: rotate(90deg);
+  transition: all 1s;
+  border-radius: 50%;
+}
+.like:hover {
+  transform: rotate(0);
+}
+.stickbox {
+  position: relative;
+  width: 500px;
+  height: 500px;
+  background: linear-gradient(45deg,gray,hsl(0, 0%, 20%));
+  border-radius: 20px;
+  margin: 0 auto;
+  padding: 20px;
+  animation: pageopen 0.5s ease-in-out;
+}
+.lines {
+  display: flex;
+  justify-content:space-evenly;
+}
+.sticks {
+  position: relative;
+  width: 190px;
+  height: 190px;
+  background-color: gray;
+  border-radius: 20px;  
+  display: flex;
+  justify-content:space-evenly;
+  padding: 20px;
+}
+.sticks .stick1{
+  position: absolute;
+  background-color: white;
+  border-radius: 20px;
+  height: 60px;
+  width: 60px;
+  top: 150px;
+  left: 30px;
+  transition: all 1s;
+}
+.sticks .stick2{
+  position: absolute;
+  background-color: white;
+  border-radius: 20px;
+  height: 60px;
+  width: 60px;
+  top: 150px;
+  right: 30px;
+  transition: all 1s;
+}
+.stick1:hover{
+  top: 20px;
+  background-color: red;
+}
+
+.stick2:hover {
+  top: 20px;
+  background-color: blue;
+}
+.buttons {
+  display: flex;
+  justify-content:space-evenly;
+  padding: 20px;
+}
+.buttons button {
+background-color: red;
+width: 80px;
+height: 80px;
+border-radius: 20px;
+}
+.buttons button:active {
+  background-color: blue;
+}
+
+.buttons {
+  position: relative;
+  width: 190px;
+  height: 190px;
+  background-color: gray;
+  border-radius: 20px;
+  float: right;
+}
+.speakers {
+  position: relative;
+  width: 230px;
+  height: 230px;
+  background-color: gray;
+  border-radius: 20px;
+}
+.speakers td {
+  height: 8px;
+  width: 8px;
+  padding: 0;
+  background-color: black;
+}
+.screens {
+  position: relative;
+  width: 230px;
+  height: 230px;
+  background-color: black;
+  border-radius: 20px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  color: greenyellow;
+  font-size: 2em;
+  line-height: 2em;
+}
+
+
+
+
+
+
+/* Ötletek effektekre ilyen emojis hogy ha rá mész nézelődik vagy kinyújtja a neylvét vagy likeol
+ilyen pukkanos ballonok
+valami egyebet is ki kéne találnilenne benne ilyen easteregg ami miatt egymásra hivatkoznak az effektek
+meg lenne egy ora effekt ami valós idő szerint mutatná az időt.
+meg lenne egy digitális óra.
+*/
