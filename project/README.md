@@ -95,3 +95,4 @@ project/
 ├── package.json            # Parancsok és függőségek
 └── vite.config.js          # Vite és relatív útvonalak beállításai
 ```
+
